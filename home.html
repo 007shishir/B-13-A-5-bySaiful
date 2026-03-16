@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - GitHub Issues Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-base-200 mx-auto ">
+    <header class="mx-auto">
+      <nav class="mx-auto ">
+        <div class="navbar bg-base-100 shadow-sm">
+          <div class="flex-1">
+            <div class="flex">
+              <div class="w-10">
+                <img src="./assets/github-logo.png" alt="" />
+              </div>
+              <a class="btn btn-ghost text-xl">GitHub Issue Tracker</a>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <input
+              type="text"
+              placeholder="Search"
+              class="input input-bordered w-24 md:w-auto"
+            />
+            <div><button class="btn btn-primary">New Issue</button></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="btn-control mx-auto w-full max-w-7xl mt-8 my-4">
+      <div class="flex gap-2">
+        <button id="allBtn" class="btn btn-primary w-20 filter-btn">All</button>
+        <button id="openBtn" class="btn w-20 filter-btn">Open</button>
+        <button id="closedBtn" class="btn w-20 filter-btn">Closed</button>
+      </div>
+    </section>
+
+    <main class="mx-auto w-full max-w-7xl px-4">
+      <section class="card bg-base-100 shadow-lg rounded-xl border border-base-200 p-6">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <img src="./assets/Aperture.png" alt="Issues" class="w-8 h-8" />
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold">50 Issues</h2>
+              <p class="text-sm text-base-content/70">Track and manage your project issues</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="badge badge-outline badge-lg gap-2">
+              <span class="w-2 h-2 rounded-full bg-success"></span>
+              Open
+            </div>
+            <div class="badge badge-outline badge-lg gap-2">
+              <span class="w-2 h-2 rounded-full bg-error"></span>
+              Closed
+            </div>
+          </div>
+        </div>
+
+        <div class="main data grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+          <!-- Issue card -->
+          <div class="card bg-base-100 shadow-md border border-t-4 border-green-500">
+            <div class="card-body p-4">
+              <div class="flex items-start justify-between gap-4  pt-3">
+                <div><img src="./assets/Open-Status.png" alt=""></div>
+                <span class="badge badge-sm badge-error">HIGH</span>
+              </div>
+
+                              <h3 class="text-lg font-semibold">Fix Navigation Menu On Mobile Devices</h3>
+
+              <p class="text-sm text-base-content/70 mt-2">
+                The navigation menu doesn't collapse properly on mobile devices.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="badge badge-outline badge-xs">BUG</span>
+                <span class="badge badge-outline badge-xs">HELP WANTED</span>
+              </div>
+
+              <div class="mt-4 border-t border-base-200 pt-3 text-xs text-base-content/70">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-user fa-xs"></i>
+                  <span>#1 by john_doe</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1">
+                  <i class="fa-regular fa-calendar fa-xs"></i>
+                  <span>1/15/2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicate card for grid demo -->
+                    <div class="card bg-base-100 shadow-md border border-t-4 border-green-500">
+            <div class="card-body p-4">
+              <div class="flex items-start justify-between gap-4  pt-3">
+                <div><img src="./assets/Open-Status.png" alt=""></div>
+                <span class="badge badge-sm badge-error">HIGH</span>
+              </div>
+
+                              <h3 class="text-lg font-semibold">Fix Navigation Menu On Mobile Devices</h3>
+
+              <p class="text-sm text-base-content/70 mt-2">
+                The navigation menu doesn't collapse properly on mobile devices.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="badge badge-outline badge-xs">BUG</span>
+                <span class="badge badge-outline badge-xs">HELP WANTED</span>
+              </div>
+
+              <div class="mt-4 border-t border-base-200 pt-3 text-xs text-base-content/70">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-user fa-xs"></i>
+                  <span>#1 by john_doe</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1">
+                  <i class="fa-regular fa-calendar fa-xs"></i>
+                  <span>1/15/2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicate card for grid demo -->
+          <div class="card bg-base-100 shadow-md border border-t-4 border-green-500">
+            <div class="card-body p-4">
+              <div class="flex items-start justify-between gap-4  pt-3">
+                <div><img src="./assets/Open-Status.png" alt=""></div>
+                <span class="badge badge-sm badge-error">HIGH</span>
+              </div>
+
+                              <h3 class="text-lg font-semibold">Fix Navigation Menu On Mobile Devices</h3>
+
+              <p class="text-sm text-base-content/70 mt-2">
+                The navigation menu doesn't collapse properly on mobile devices.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="badge badge-outline badge-xs">BUG</span>
+                <span class="badge badge-outline badge-xs">HELP WANTED</span>
+              </div>
+
+              <div class="mt-4 border-t border-base-200 pt-3 text-xs text-base-content/70">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-user fa-xs"></i>
+                  <span>#1 by john_doe</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1">
+                  <i class="fa-regular fa-calendar fa-xs"></i>
+                  <span>1/15/2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicate card for grid demo -->
+          <div class="card bg-base-100 shadow-md border border-t-4 border-green-500">
+            <div class="card-body p-4">
+              <div class="flex items-start justify-between gap-4  pt-3">
+                <div><img src="./assets/Open-Status.png" alt=""></div>
+                <span class="badge badge-sm badge-error">HIGH</span>
+              </div>
+
+                              <h3 class="text-lg font-semibold">Fix Navigation Menu On Mobile Devices</h3>
+
+              <p class="text-sm text-base-content/70 mt-2">
+                The navigation menu doesn't collapse properly on mobile devices.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="badge badge-outline badge-xs">BUG</span>
+                <span class="badge badge-outline badge-xs">HELP WANTED</span>
+              </div>
+
+              <div class="mt-4 border-t border-base-200 pt-3 text-xs text-base-content/70">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-user fa-xs"></i>
+                  <span>#1 by john_doe</span>
+                </div>
+                <div class="flex items-center gap-2 mt-1">
+                  <i class="fa-regular fa-calendar fa-xs"></i>
+                  <span>1/15/2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="home.js"></script>
+  </body>
+</html>

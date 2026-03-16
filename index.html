@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 5 by Saiful Islam</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="hero min-h-screen bg-base-100 w-full">
+      <div class="hero-content grid grid-cols-1 gap-8 shadow-2xl">
+        <div class="text-center mx-auto w-full max-w-lg">
+          <img
+            src="./assets/github-logo.png"
+            alt="GitHub Logo"
+            class="w-24 h-24 mx-auto mb-4"
+          />
+          <h1 class="text-3xl font-bold">GitHub Issues Tracker</h1>
+          <p class="py-2">Sign in to manage your issues.</p>
+        </div>
+        <div class="card">
+          <form class="card-body" id="loginForm">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text font-bold">Username</span>
+              </label>
+              <input
+                type="text"
+                placeholder="username"
+                class="input input-bordered"
+                id="username"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text font-bold">Password</span>
+              </label>
+              <input
+                type="password"
+                placeholder="password"
+                class="input input-bordered"
+                id="password"
+                required
+              />
+            </div>
+            <div class="form-control mt-6 mx-auto w-full">
+              <button class="btn btn-primary w-full" type="submit">
+                Sign In
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>
