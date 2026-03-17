@@ -29,11 +29,11 @@ fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
         const div = document.createElement("div");
         div.innerHTML = `
         
-        <div class="card bg-base-100 shadow-md border border-t-4 border-green-500">
+        <div class="card bg-base-100 shadow-md border border-t-4 ${issue.status === 'closed' ? 'border-red-500' : 'border-green-500'}">
             <div class="card-body p-4">
               <div class="flex items-start justify-between gap-4  pt-3">
                 <div><img src="./assets/Open-Status.png" alt=""></div>
-                <span class="badge badge-sm badge-error">HIGH</span>
+                <span class="badge badge-sm ${issue.priority === 'high' ? 'badge-error' : 'badge-info'}">${issue.priority}</span>
               </div>
 
            <h3 class="text-lg font-semibold">${issue.title || 'Sample Issue'}</h3>
