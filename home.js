@@ -18,10 +18,13 @@ fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     let filtered = [];
     if (type === "allBtn") {
         filtered = [...originalIssueData];
+        setIssuesCount(filtered);
     } else if (type === "openBtn") {
         filtered = originalIssueData.filter((issue) => issue.status === "open");
+        setIssuesCount(filtered);
     } else if (type === "closedBtn") {
         filtered = originalIssueData.filter((issue) => issue.status === "closed");
+        setIssuesCount(filtered);
     }
 
     filtered.forEach((issue) => {
@@ -92,3 +95,12 @@ const setActiveButton = (activeBtn) => {
   // Add the primary style to the clicked button
   activeBtn.classList.add("btn-primary");
 };
+
+
+
+const setIssuesCount = (dataArr) => {
+  const countIssue = document.getElementById("countIssues");
+  countIssue.innerHTML= `
+  ${dataArr.length} Issues
+  `
+}
