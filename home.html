@@ -17,6 +17,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-base-200 mx-auto ">
     <header class="mx-auto">
@@ -204,7 +205,23 @@
           </div>
         </div>
       </section>
+
+<!-- Loading -->
+      <section>
+      <div id="loading" class="hidden text-center mx-auto text-lg font-semibold" animate="pulse">Loading...</div>
+    </section>
+
     </main>
+
+<div id="issueModal" class="hidden modal modal-bottom sm:modal-middle">
+  <!-- <div class="modal-box">
+    <h3 class="font-bold text-lg">Issue Details</h3>
+    <p class="py-4">This is a simple modal.</p>
+    <div class="modal-action">
+      <button class="btn" onclick="showModal()">Close</button>
+    </div>
+  </div> -->
+</div>
 
     <script src="home.js"></script>
   </body>
