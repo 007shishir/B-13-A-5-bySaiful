@@ -1,12 +1,12 @@
-let originalIssueData = [];
-let issueData = [];
+let allIssues = [];
+let currentIssues = [];
 
 fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
   .then((response) => response.json())
   .then((data) => {
-    originalIssueData = data.data;
-    issueData = [...originalIssueData];
-    console.log("Fetched issue data:", issueData);
+    allIssues = data.data;
+    currentIssues = [...allIssues];
+    console.log("Fetched issue data:", currentIssues);
     // You can call a function here to render the issues on the page
     renderIssues("allBtn");
   });
@@ -17,13 +17,13 @@ fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
 
     let filtered = [];
     if (type === "allBtn") {
-        filtered = [...originalIssueData];
+        filtered = [...currentIssues];
         setIssuesCount(filtered);
     } else if (type === "openBtn") {
-        filtered = originalIssueData.filter((issue) => issue.status === "open");
+        filtered = currentIssues.filter((issue) => issue.status === "open");
         setIssuesCount(filtered);
     } else if (type === "closedBtn") {
-        filtered = originalIssueData.filter((issue) => issue.status === "closed");
+        filtered = currentIssues.filter((issue) => issue.status === "closed");
         setIssuesCount(filtered);
     }
 
@@ -73,18 +73,21 @@ fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
 
 document.getElementById("allBtn").onclick = function () {
   console.log("All button clicked");
+  currentIssues = [...allIssues];
   setActiveButton(this);
   renderIssues("allBtn");
 };
 
 document.getElementById("openBtn").onclick = function () {
   console.log("Open button clicked");
+  currentIssues = [...allIssues];
   setActiveButton(this);
   renderIssues("openBtn");
 };
 
 document.getElementById("closedBtn").onclick = function () {
   console.log("Closed button clicked");
+  currentIssues = [...allIssues];
   setActiveButton(this);
   renderIssues("closedBtn");
 };
@@ -115,6 +118,36 @@ setLoader = (isLoading) => {
   loader.classList.toggle("hidden", !isLoading);
 };
 
+const searchIssues = () => {
+  const issueContainer = document.getElementById("issueContainer");
+    issueContainer.innerHTML = ""; // Clear existing issues
+  const searchText = document.getElementById("searchInput").value.trim();
+  setLoader(true); // Show loader while searching
+
+  if (searchText) {
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`
+    
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        currentIssues = data.data;
+        console.log("Searched issue data:", currentIssues);
+        renderIssues("allBtn");
+        setLoader(false); // Hide loader after search
+      })
+      .catch((error) => {
+        console.error("Search failed:", error);
+        setLoader(false);
+      });
+  } else {
+    currentIssues = [...allIssues];
+    renderIssues("allBtn");
+    setLoader(false);
+  }
+};
+
+document.getElementById("searchBtn").onclick = searchIssues;
 
 showModal = (id) => {
   const modal = document.getElementById("issueModal");
